@@ -1,4 +1,15 @@
 $(document).ready(function () {
+  $('.home').hide();
+
+  ///////SPLASH
+  setTimeout(function() {
+    $('.fly-in-text').removeClass('hidden');
+  }, 500);
+  })
+
+  $('.splash-screen').delay('2800').fadeOut('slow');
+  $('.home').delay('2800').fadeIn('slow');
+
   //////////// FIRE BASE "CADASTRO EMPRESARIAL"
   $(".sign-up-company").click(function(event){
     event.preventDefault();
@@ -16,7 +27,6 @@ $(document).ready(function () {
       alert(errorMessage);
     });
   });
-
 
   //////////// FIRE BASE "ENTRAR EMPRESARIAL"
   $(".sign-in-company").click(function(event){
@@ -36,5 +46,4 @@ $(document).ready(function () {
     });
   });
 
-});
 
