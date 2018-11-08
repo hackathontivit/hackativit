@@ -4,22 +4,122 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>HACKATIVIT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+  <!-- SCRIPT FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAmsYfHFv1SbO9BYZWLNDU9CiyTOBYgh30",
+      authDomain: "hackathon-tivit.firebaseapp.com",
+      databaseURL: "https://hackathon-tivit.firebaseio.com",
+      projectId: "hackathon-tivit",
+      storageBucket: "hackathon-tivit.appspot.com",
+      messagingSenderId: "973413685809"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
   
+  <!-- REGISTRAR -->
 
+  <section class="text-center">
+    <form class="form-signin">
+      <h1 class="">Usuário cadestre-se aqui:</h1>
+
+      <!-- nome -->
+      <input type="name" id="sign-up-name" class="" placeholder="Nome" required autofocus>
+
+      <!-- e-mail -->
+      <input type="email" id="sign-up-email" class="" placeholder="E-mail" required autofocus>
+
+      <!-- gênero -->
+      <select type="gender" class="" id="sign-up-password" placeholder="Gênero">
+          <option selected>Gênero</option>
+          <option value="1">Feminino</option>
+          <option value="2">Masculino</option>
+          <option value="3">Outros</option>
+      </select>
+
+      <!-- endereço rua e número -->
+      <input type="text" id="sign-up-address" class="" placeholder="Endereço" required autofocus>
+
+      <!-- cep -->
+      <input type="number" id="sign-up-cep" class="" placeholder="CEP" required autofocus>
+
+      <!-- estado -->
+      <input type="text" id="sign-up-state" class="" placeholder="Estado" required autofocus>
+
+      <!-- cidade -->
+      <input type="text" id="sign-up-city" class="" placeholder="Cidade" required autofocus>
+
+      <!-- data nascimento -->
+      <input type="date" id="sign-up-birth" class="" placeholder="Data de nascimento" required autofocus>
+
+      <!-- escolaridade -->
+      <select type="text" class="" id="sign-up-schooling" placeholder="Escolaridade">
+          <option selected>Escolaridade</option>
+          <option value="1">Fundamental Incompleto</option>
+          <option value="2">Fundamental Completo</option>
+          <option value="3">Médio Incompleto</option>
+          <option value="4">Médio Completo</option>
+          <option value="5">Superior Incompleto</option>
+          <option value="6">Superior Completo</option>
+          <option value="7">Pós Graduação</option>
+      </select>
+
+      <!-- classe social -->
+      <select type="text" class="" id="sign-up-schooling" placeholder="Classe social">
+          <option selected>Classe social</option>
+          <option value="1">Classe alta</option>
+          <option value="2">Classe média</option>
+          <option value="3">Classe baixa</option>
+      </select>
+
+    </form>
+    <!-- SUBMIT CLIENTE -->
+    <button class="" id="sign-up-usuary" type="submit">Enviar dados</button>
+
+
+
+
+    <!-- LOGIN EMPRESARIAL -->
+
+    <form class="form-signin">
+      <h1 class="">Login empresarial aqui:</h1>
+      <!-- E-MAIL EMPRESA -->
+      <input type="text" id="email-address" class="si-email-address-company su-email-address-company" placeholder="E-mail" required autofocus>
+      <!-- SENHA -->
+      <input type="password" id="password-company" class="si-password-company su-password-company" placeholder="Senha" required autofocus>
+
+      <!-- BOTÃO LOGIN EMPRESARIAL -->
+      <button type="button" class="sign-in-company" data-toggle="modal" data-target="#signInModal">Sign In</button> 
+
+      <!-- BOTÃO REGISTRO EMPRESARIAL -->
+      <button id="sign-up-company" class="sign-up-company" type="submit">Sign Up</button>
+    </form>
+
+  </section>
+
+
+
+
+  <!-- SCRIPT JQUERY (BOOTS) -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- SCRIPT AJAX (BOOTS) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <!-- SCRIPT BOOTSTRAP -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- JS -->
   <script src="index.js"></script>
-  <script src="firebase-config.js"></script>
 
 
 </body>
