@@ -6,6 +6,15 @@ $(document).ready(function() {
   //addCustomerToDB(database, customer);
   // updateCustomerFromDB(database, id, customer);
   // deleteCustomerFromDB(database, id);
-  let customers = listCustomersFromDB(database);
-  customers.then(foo => console.log(foo));
+
+  //para listar os clientes cadastrados
+    // let customers = listCustomersFromDB(database);
+    // customers.then(foo => console.log(foo));
+
+  //para pegar a soma por genero
+  let sum = sumGenderCustomer(database);
+  sum.then(genero => console.log(genero));
+
+
+
 });

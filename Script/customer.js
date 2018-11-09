@@ -61,3 +61,25 @@ function deleteCustomerFromDB(database, id) {
     });
   return list;
 }
+
+async function sumGenderCustomer(database) {
+  let customers = listCustomersFromDB(database);
+  let soma = {
+    Masculino: 0,
+    Feminino: 0,
+    Outros: 0
+  };
+  await customers.then(function(list) {
+
+    list.forEach(function(cliente) {
+      if (cliente.gender === 'M') {
+        soma.Masculino++;
+      } else if (cliente.gender === 'F') {
+        soma.Feminino++;
+      } else {
+        soma.Outros++;
+      }
+    });
+  });
+  return soma;
+}
