@@ -5,6 +5,7 @@ $(document).ready(function () {
   setTimeout(function() {
     $('.fly-in-text').removeClass('hidden');
   }, 500);
+
   })
 
   $('.splash-screen').delay('2800').fadeOut('slow');
@@ -45,5 +46,3 @@ $(document).ready(function () {
       alert(errorMessage);
     });
   });
-
-
